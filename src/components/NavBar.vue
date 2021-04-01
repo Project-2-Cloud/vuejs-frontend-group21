@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <router-link to="/">
+    <router-link to="/" class="d-flex align-items-center">
       <img class="grasshopper" src="../assets/grasshopper.png" />
       <span class="hellohopper"><span>Hello</span> <span>Hopper</span></span>
     </router-link>
@@ -11,12 +11,10 @@
       to="/"
       tag="div"
       v-if="!isAuthenticated"
-      class="nav-item"
-      active-class="active"
+      @click="onLoginClicked"
+      class="login"
     >
-      <a @click="onLoginClicked" class="nav-link login">
-        <span>Log</span> <span>in</span>
-      </a>
+      <span>Log</span> <span>in</span>
     </router-link>
     <div v-if="isAuthenticated" class="li-pointer nav-item">
       <div class="dropdown">
@@ -79,10 +77,10 @@ nav {
   text-align: left;
   padding: 15px;
   box-shadow: 0px 6px 6px #00000029;
+  height: 10vh;
 }
 
 nav .grasshopper {
-  width: auto;
   height: 80px;
 }
 
@@ -103,8 +101,8 @@ nav .login {
   border: 1px solid #707070;
   border-radius: 30px;
   box-sizing: border-box;
-  padding: 10px 30px;
   font-weight: bold;
+  padding: 5px 10px;
 }
 nav .login > span:first-child {
   color: white;
@@ -113,7 +111,8 @@ nav .login > span:last-child {
   color: #228c22;
 }
 
-nav a, nav span{
+nav a,
+nav span {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1.5em;
   color: #4f5458;

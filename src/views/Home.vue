@@ -1,11 +1,18 @@
 <template>
   <div class="home">
-    <div class="discover">DISCOVER THE NEW CUISINE OF INSECTS</div>
-    <router-link to="/subscriptions" class="plans">View our plans</router-link>
-    <div class="button-next-page" @click="scroll()"></div>
+    <div class="d-flex flex-column first-page">
+      <div class="discover">DISCOVER THE NEW CUISINE OF INSECTS</div>
+      <router-link to="/subscriptions" class="plans"
+        >View our plans</router-link
+      >
+      <div class="button-next-page" @click="scroll()"></div>
+    </div>
     <div class="second-page container-fluid bg-white">
       <div class="row">
-        <img src="../assets/paleo_cricket_snaps.jpg" class="col-sm p-0 side-img" />
+        <img
+          src="../assets/paleo_cricket_snaps.jpg"
+          class="col-sm p-0 side-img"
+        />
         <div class="col-5 text-center m-5">
           <h1>What's in the box</h1>
           <ul class="text-left m-5">
@@ -149,7 +156,7 @@
       <div class="col-5 text-center m-5">
         <h1>The most ecological source of protien on the planet</h1>
         <ul class="text-left m-5">
-          <li class="m-2">Critters bred in-house</li>
+          <li class="m-2">Bugs farmed in-house</li>
           <li class="m-2">Least water per meat required</li>
           <li class="m-2">No animal suffrage</li>
           <li class="m-2">Better for the environment</li>
@@ -167,7 +174,10 @@
   </div>
   <div class="third-page container-fluid bg-grey">
     <div class="row">
-      <img src="../assets/carrot_buffalo_worm_soop.jpg" class="col-sm p-0 side-img" />
+      <img
+        src="../assets/carrot_buffalo_worm_soop.jpg"
+        class="col-sm p-0 side-img"
+      />
       <div class="col-5 text-center m-5">
         <h1>It's just that easy</h1>
         <ol class="count text-left m-5 h4">
@@ -213,6 +223,9 @@ export default {
 };
 </script>
 <style scoped>
+.first-page {
+  height: 90vh;
+}
 .plans {
   display: block;
   width: 250px;
@@ -222,7 +235,7 @@ export default {
   border-radius: 20px;
   color: white;
   font-size: 1.7em;
-  margin: 40vh auto auto;
+  margin: 20vh auto auto;
   padding: 5px;
   text-align: center;
   text-decoration: none;
@@ -232,11 +245,12 @@ export default {
   width: 60px;
   height: 60px;
   position: static;
-  margin: 20vh auto 0;
+  margin: 10vh auto 0;
   background-color: white;
   border: 3px solid #1e7f3f;
   border-radius: 100%;
   animation: click-me 10s infinite;
+  margin-bottom: 100px;
 }
 .button-next-page::after {
   display: block;
@@ -254,14 +268,15 @@ export default {
 }
 .discover {
   color: white;
-  font-size: 2em;
-  width: 800px;
+  font-size: 2.75em;
+  width: max-content;
+  padding: 0 10px;
   font-weight: bold;
   text-align: center;
-  background: #4f545882 0% 0% no-repeat padding-box;
+  background: #474e46bd 0% 0% no-repeat padding-box;
   box-shadow: 0px 6px 6px #00000029;
   border-radius: 16px;
-  margin: 50px auto 0 auto;
+  margin: auto;
 }
 .bg-grey {
   background-color: #e1e1e1;
@@ -321,7 +336,7 @@ img.d-block {
   height: 300px;
   object-fit: cover;
 }
-img.side-img{
+img.side-img {
   width: 790px !important;
 }
 </style>
