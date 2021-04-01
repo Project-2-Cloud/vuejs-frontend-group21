@@ -8,7 +8,7 @@ const headers = { Accept: 'application/json' }
 
 export default createStore({
   state: {
-    
+
     user: {
       isAuthenticated: false,
       name: "",
@@ -21,12 +21,12 @@ export default createStore({
       products: url,
     },
     products: [],
-    incart:[]
+    inCart: []
   },
   getters: {
     products: state => state.products,
     inCart: state => state.inCart,
-   },
+  },
   mutations: {
     logout(state) {
       state.user.isAuthenticated = false;
@@ -49,13 +49,13 @@ export default createStore({
     setProducts(state, payload) {
       state.products = payload;
     },
-    addToCart(state, payload) { 
+    addToCart(state, payload) {
       console.log(payload);
       state.inCart.push(payload);
-     },
-     removeFromCart(state, item) { 
-       state.inCart.splice(item, 1); 
-     },
+    },
+    removeFromCart(state, item) {
+      state.inCart.splice(item, 1);
+    },
   },
   actions: {
     async getProducts(state) {

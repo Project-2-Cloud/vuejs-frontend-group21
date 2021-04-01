@@ -1,5 +1,24 @@
 <template>
-  <div class="product">
+  <div class="card m-2" style="width: 18rem">
+    <img
+      class="card-img-top"
+      :src="require('../assets/' + thumbnail_url)"
+      :alt="thumbnail_url"
+      :title="thumbnail_url"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ title }}</h5>
+      <p class="card-text">
+        {{ description }}
+      </p>
+      <a
+        @click="addToCart({ title: title, price: price })"
+        class="btn btn-primary"
+        >€{{ price }}
+      </a>
+    </div>
+  </div>
+  <!-- <div class="product">
     <div>
       <h2>{{ title }}</h2>
       <h3>{{ category }}</h3>
@@ -8,8 +27,12 @@
       <img :src="thumbnail_url" :alt="thumbnail_url" :title="thumbnail_url">
       <h3>€{{ price }}</h3>
       <p>{{ description }}</p>
+      <button>
+
+      </button>
+
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -21,6 +44,12 @@ export default {
     description: String,
     price: Number,
     thumbnail_url: String
+  },
+  methods: {
+    addToCart(payload) {
+      console.log(payload);
+      this.$store.commit("addToCart", payload);
+    }
   }
 };
 </script>

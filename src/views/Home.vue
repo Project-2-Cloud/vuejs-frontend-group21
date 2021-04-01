@@ -2,10 +2,7 @@
   <div class="home">
     <div class="discover">DISCOVER THE NEW CUISINE OF INSECTS</div>
     <router-link to="/plans" class="plans">View our plans</router-link>
-    <div
-      class="button-next-page"
-      :click="window.scrollBy(0, window.innerHeight)"
-    ></div>
+    <div class="button-next-page" @click="scroll()"></div>
     <div class="second-page container-fluid bg-white">
       <div class="row">
         <img src="../assets/paleo_cricket_snaps.jpg" class="col-sm p-0" />
@@ -17,11 +14,17 @@
             <li class="m-2">Per-meal box easily organize you fridge</li>
             <li class="m-2">Exotic yet local flavours for you to experience</li>
           </ul>
-          <button type="button" class="btn btn-primary">Choose My Plan</button>
+          <router-link
+            to="/plans"
+            tag="button"
+            type="button"
+            class="btn btn-primary"
+            >Choose My Plan</router-link
+          >
         </div>
       </div>
     </div>
-    <div class="container-fluid text-center m-3">
+    <div class="container-fluid text-center p-3 bg-grey">
       <h1>Innovative and tasty recipes</h1>
       <div class="mb-5 h4 m-5">
         Each recipe has been curated by world class cheffs. Whether they are
@@ -78,7 +81,7 @@
                 <img
                   class="d-block"
                   height="200"
-                  src="../assets/big_mexican_grasshoppers.png"
+                  src="../assets/cricket_mealworm_grasshopper_burger.png"
                   alt="First slide"
                 />
               </div>
@@ -86,7 +89,7 @@
                 <img
                   class="d-block"
                   height="200"
-                  src="../assets/black_ant_quacamole.jpg"
+                  src="../assets/paleo_cricket_snaps.jpg"
                   alt="Second slide"
                 />
               </div>
@@ -94,7 +97,7 @@
                 <img
                   class="d-block"
                   height="200"
-                  src="../assets/carrot_buffalo_worm_soop.jpg"
+                  src="../assets/cricket_powder_bananabread.jpg"
                   alt="Third slide"
                 />
               </div>
@@ -102,10 +105,16 @@
           </div>
         </div>
       </div>
+      <div class="d-flex justify-content-center">
+      <router-link
+        to="/plans"
+        tag="button"
+        type="button"
+        class="btn btn-primary m-5"
+        >Get Cooking</router-link>
     </div>
-    <div class="d-flex justify-content-center">
-      <button type="button" class="btn btn-primary m-5">Get Cooking</button>
     </div>
+    
   </div>
   <div class="third-page container-fluid bg-white">
     <div class="row">
@@ -117,12 +126,18 @@
           <li class="m-2">No animal suffrage</li>
           <li class="m-2">Better for the environment</li>
         </ul>
-        <button type="button" class="btn btn-primary">Go Nature</button>
+        <router-link
+          to="/plans"
+          tag="button"
+          type="button"
+          class="btn btn-primary"
+          >Go Nature</router-link
+        >
       </div>
       <img src="../assets/ecology.jpg" class="col-sm p-0" />
     </div>
   </div>
-  <div class="third-page container-fluid bg-white">
+  <div class="third-page container-fluid bg-grey">
     <div class="row">
       <img src="../assets/carrot_buffalo_worm_soop.jpg" class="col-sm p-0" />
       <div class="col-5 text-center m-5">
@@ -133,7 +148,13 @@
           <li class="m-4">Add your address</li>
           <li class="m-4">Enjoy!</li>
         </ol>
-        <button type="button" class="btn btn-primary">Get started</button>
+        <router-link
+          to="/plans"
+          tag="button"
+          type="button"
+          class="btn btn-primary"
+          >Get started</router-link
+        >
       </div>
     </div>
   </div>
@@ -147,6 +168,15 @@ export default {
   computed: {
     products() {
       return this.$store.state.products;
+    }
+  },
+  methods: {
+    scroll() {
+      window.scrollBy({
+        top: window.innerHeight,
+        left: 0,
+        behavior: "smooth"
+      });
     }
   },
   components: {
@@ -204,6 +234,9 @@ export default {
   box-shadow: 0px 6px 6px #00000029;
   border-radius: 16px;
   margin: 50px auto 0 auto;
+}
+.bg-grey {
+  background-color: #e1e1e1;
 }
 
 @keyframes click-me {

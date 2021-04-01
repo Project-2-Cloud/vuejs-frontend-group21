@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h1>Here will be list of subscription options</h1>
+    <h1>Pick your poison</h1>
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="container">
         <div class="row">
           <Product
@@ -36,3 +36,21 @@ export default {
   }
 };
 </script>
+<style scoped>
+div h1 {
+  text-align: center;
+  color: white;
+  padding: 0.5rem 2rem;
+  background-color: rgba(204, 204, 204, 0.27);
+  width: fit-content;
+  margin: 0.5rem auto 2rem;
+  border-radius: 0.5rem;
+}
+div.container-fluid, div.container{
+  width: 100%;
+  margin: 0 auto; 
+}
+div.row{
+  justify-content: center;
+}
+</style>
