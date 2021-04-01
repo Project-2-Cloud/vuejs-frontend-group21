@@ -1,9 +1,10 @@
 <template>
   <div class="container">
     <div class="container bg-white p-5 m-5 rounded">
+      <h1>Add Subscription</h1>
       <form action="#" @submit="register">
         <div class="form-group">
-          <label for="title">Product name</label>
+          <label for="title">Title</label>
           <input
             type="text"
             class="form-control"
@@ -14,7 +15,7 @@
           />
         </div>
         <div class="form-group">
-          <label for="description">Product description</label>
+          <label for="description">Description</label>
           <input
             type="text"
             class="form-control"
@@ -94,4 +95,3 @@ export default {
   }
 };
 </script>
-
