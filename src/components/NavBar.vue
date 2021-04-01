@@ -31,13 +31,13 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Account Settings</a>
-          <a
+          <router-link
             v-if="isPartner"
             @click="onRegisterClicked"
             class="dropdown-item"
-            href="#"
-            >Register Product</a
-          >
+            to="/box-creation"
+            >Register Product
+          </router-link>
           <a @click="onLogoutClicked" class="dropdown-item"
             >Logout {{ userEmail }}</a
           >
@@ -73,17 +73,6 @@ export default {
     },
     getUserName() {
       return this.$store.state.user.name;
-    },
-    onRegisterClicked() {
-      let obj = {
-        description: "description",
-        id: parseInt("1"),
-        price: parseInt("1000"),
-        quantity: parseInt("10"),
-        thumbnail_url: "thumbnail_url",
-        title: "title"
-      };
-      this.$store.dispatch("registerProduct", obj);
     }
   }
 };
@@ -126,6 +115,10 @@ nav .login {
   box-sizing: border-box;
   font-weight: bold;
   padding: 0 20px;
+  transition: all 500ms ease;
+}
+nav .login:hover {
+  transform: scale(1.2);
 }
 nav .login > span:first-child {
   color: white;

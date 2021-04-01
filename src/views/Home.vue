@@ -7,30 +7,6 @@
       >
       <div class="button-next-page" @click="scroll()"></div>
     </div>
-    <div class="second-page container-fluid bg-white">
-      <div class="row">
-        <img
-          src="../assets/paleo_cricket_snaps.jpg"
-          class="col-sm p-0 side-img"
-        />
-        <div class="col-5 text-center m-5">
-          <h1>What's in the box</h1>
-          <ul class="text-left m-5">
-            <li class="m-2">Easy-to-follow recipes with clear steps</li>
-            <li class="m-2">High-quality ethically sourced ingredients</li>
-            <li class="m-2">Per-meal box easily organize your fridge</li>
-            <li class="m-2">Exotic yet local flavours for you to experience</li>
-          </ul>
-          <router-link
-            to="/subscriptions"
-            tag="button"
-            type="button"
-            class="btn btn-primary"
-            >Choose My Plan</router-link
-          >
-        </div>
-      </div>
-    </div>
     <div class="container-fluid text-center p-3 bg-grey">
       <h1>Innovative and tasty recipes</h1>
       <div class="mb-5 h4 m-5">
@@ -150,6 +126,31 @@
         >
       </div>
     </div>
+    <div class="second-page container-fluid bg-white">
+      <div class="row">
+        <img
+          src="../assets/paleo_cricket_snaps.jpg"
+          class="col-sm p-0 side-img"
+        />
+        <div class="col-5 text-center m-5">
+          <h1>What's in the box</h1>
+          <ul class="text-left m-5">
+            <li class="m-2">Easy-to-follow recipes with clear steps</li>
+            <li class="m-2">High-quality ethically sourced ingredients</li>
+            <li class="m-2">Per-meal box easily organize your fridge</li>
+            <li class="m-2">Exotic yet local flavours for you to experience</li>
+          </ul>
+          <router-link
+            to="/subscriptions"
+            tag="button"
+            type="button"
+            class="btn btn-primary"
+            >Choose My Plan</router-link
+          >
+        </div>
+      </div>
+    </div>
+    
   </div>
   <div class="third-page container-fluid bg-white">
     <div class="row">

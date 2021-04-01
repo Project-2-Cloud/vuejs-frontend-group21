@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Subscriptions from '../views/Subscriptions.vue'
 import Login from '../views/Login.vue'
+import BoxCreation from '../views/BoxCreation.vue'
 
 const routes = [
   {
@@ -18,6 +19,11 @@ const routes = [
     path: '/loginwithtoken',
     name: 'loginwithtoken',
     component: Login
+  },
+  {
+    path: '/box-creation',
+    name: 'BoxCreation',
+    component: BoxCreation
   }
 ]
 
