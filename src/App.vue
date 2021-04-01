@@ -35,7 +35,15 @@ import NavBar from "@/components/NavBar.vue";
 
 export default {
   mounted() {
+    if (localStorage.getItem("user")) {
+      try {
+        this.$store.state.user = JSON.parse(localStorage.getItem("user"));
+      } catch (e) {
+        localStorage.removeItem("user");
+      }
+    }
     this.$store.dispatch("getProducts");
+    this.$store.dispatch("checkPartner");
   },
 
   name: "App",

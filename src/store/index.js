@@ -36,6 +36,7 @@ export default createStore({
       state.user.idToken = "";
       state.user.accessToken = "";
       state.user.partner = "";
+      localStorage.user = state.user;
     },
     login(state, payload) {
       state.user.isAuthenticated = true;
@@ -43,6 +44,7 @@ export default createStore({
       state.user.email = payload.email;
       state.user.idToken = payload.idToken;
       state.user.accessToken = payload.accessToken;
+      localStorage.setItem('user', JSON.stringify(state.user));
     },
     SET_PARTNER(state, partner) {
       state.user.partner = partner;
@@ -69,14 +71,15 @@ export default createStore({
       let accessToken = state.user.accessToken;
       console.log("checking partner access", state.endpoints.partnercheck);
       const AuthStr = 'Bearer '.concat(accessToken);
-      const AuthHeader = { 'Authorization': AuthStr};
-      console.log("AuthToken=",AuthHeader);
-      let response = await fetch(state.endpoints.partnercheck, { 
+      const AuthHeader = { 'Authorization': AuthStr };
+      console.log("AuthToken=", AuthHeader);
+      let response = await fetch(state.endpoints.partnercheck, {
         method: 'GET',
         headers: {
-          'Authorization': AuthStr }
-        });
-      console.log("partneraccess",response);
+          'Authorization': AuthStr
+        }
+      });
+      console.log("partneraccess", response);
       if (response.ok) {
         commit('SET_PARTNER', true);
         console.log("TRUE");
@@ -92,21 +95,15 @@ export default createStore({
       const AuthStr = 'Bearer '.concat(accessToken);
       console.log(AuthStr);
       console.log(obj);
-      axios(productsurl, { 
-          method: 'POST',
-          headers: {
-            'Accept': '*/*',
-            'Content-Type': 'application/json',
-            'Authorization': AuthStr
-          },
-          credentials: 'include',
-          data: obj
-      })
-      .then(response => {
-        console.log('Response:', response);
-      })
-      .catch((error) => {
-        console.error('Error:', error);
+      return axios(productsurl, {
+        method: 'POST',
+        headers: {
+          'Accept': '*/*',
+          'Content-Type': 'application/json',
+          'Authorization': AuthStr
+        },
+        credentials: 'include',
+        data: obj
       });
     },
   },

@@ -31,11 +31,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Account Settings</a>
-          <router-link
-            v-if="isPartner"
-            @click="onRegisterClicked"
-            class="dropdown-item"
-            to="/box-creation"
+          <router-link v-if="isPartner" class="dropdown-item" to="/box-creation"
             >Register Product
           </router-link>
           <a @click="onLogoutClicked" class="dropdown-item"

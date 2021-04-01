@@ -138,7 +138,7 @@
             <li class="m-2">Easy-to-follow recipes with clear steps</li>
             <li class="m-2">High-quality ethically sourced ingredients</li>
             <li class="m-2">Per-meal box easily organize your fridge</li>
-            <li class="m-2">Exotic yet local flavours for you to experience</li>
+            <li class="m-2">Exotic flavours, localy grown, for you to experience</li>
           </ul>
           <router-link
             to="/subscriptions"
@@ -160,7 +160,7 @@
           <li class="m-2">Bugs farmed in-house</li>
           <li class="m-2">Least water per meat required</li>
           <li class="m-2">No animal suffering</li>
-          <li class="m-2">Better for the environment</li>
+          <li class="m-2">No feeding with antibiotics</li>
         </ul>
         <router-link
           to="/subscriptions"

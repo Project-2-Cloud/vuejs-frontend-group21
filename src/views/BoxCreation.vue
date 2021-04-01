@@ -27,9 +27,9 @@
         <div class="form-group">
           <label for="thumbnail_url">Thumbnail</label>
           <select id="thumbnail_url" class="form-control">
-            <option>small.png</option>
-            <option>medium.png</option>
-            <option>large.png</option>
+            <option value= "small">small.png</option>
+            <option value= "medium">medium.png</option>
+            <option value= "large">large.png</option>
           </select>
         </div>
         <div class="form-group">
@@ -68,13 +68,25 @@ export default {
   methods: {
     register(event) {
       event.preventDefault();
-      this.$store.dispatch("registerProduct", {
-        title: title.value,
-        description: description.value,
-        thumbnail_url: thumbnail_url.value,
-        quantity: quantity.value,
-        price: price.value
-      });
+      this.$store
+        .dispatch("registerProduct", {
+          title: title.value,
+          description: description.value,
+          thumbnail_url: thumbnail_url.value,
+          quantity: quantity.value,
+          price: price.value
+        })
+        .then(r => {
+          console.log("noice", r);
+        })
+        .catch(error => {
+          console.error("ouch", error);
+        });
+        title.value = "";
+        description.value = "";
+        thumbnail_url.value = "";
+        quantity.value = "";
+        price.value = "";
     }
   },
   mounted() {
