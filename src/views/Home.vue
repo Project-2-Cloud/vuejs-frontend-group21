@@ -18,7 +18,7 @@
           <ul class="text-left m-5">
             <li class="m-2">Easy-to-follow recipes with clear steps</li>
             <li class="m-2">High-quality ethically sourced ingredients</li>
-            <li class="m-2">Per-meal box easily organize you fridge</li>
+            <li class="m-2">Per-meal box easily organize your fridge</li>
             <li class="m-2">Exotic yet local flavours for you to experience</li>
           </ul>
           <router-link
@@ -34,8 +34,8 @@
     <div class="container-fluid text-center p-3 bg-grey">
       <h1>Innovative and tasty recipes</h1>
       <div class="mb-5 h4 m-5">
-        Each recipe has been curated by world class cheffs. Whether they are
-        used to insects or not, they loved it, and so will you!
+        Each recipe has been curated by world class chefs. Whether they are used
+        to insects or not, they loved it, and so will you!
       </div>
       <div id="carouselImages" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -154,11 +154,11 @@
   <div class="third-page container-fluid bg-white">
     <div class="row">
       <div class="col-5 text-center m-5">
-        <h1>The most ecological source of protien on the planet</h1>
+        <h1>The most ecological source of protein on the planet</h1>
         <ul class="text-left m-5">
           <li class="m-2">Bugs farmed in-house</li>
           <li class="m-2">Least water per meat required</li>
-          <li class="m-2">No animal suffrage</li>
+          <li class="m-2">No animal suffering</li>
           <li class="m-2">Better for the environment</li>
         </ul>
         <router-link

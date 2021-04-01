@@ -29,6 +29,7 @@ export default {
       idToken != ""
     ) {
       this.$store.commit("login", payload);
+      this.$store.dispatch("checkPartner"); 
     } else {
       this.$store.commit("logout");
     }
