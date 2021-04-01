@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Pick your poison</h1>
+    <h1>Pick your box</h1>
 
     <div class="container-fluid">
       <div class="container">
@@ -46,11 +46,12 @@ div h1 {
   margin: 0.5rem auto 2rem;
   border-radius: 0.5rem;
 }
-div.container-fluid, div.container{
+div.container-fluid,
+div.container {
   width: 100%;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
-div.row{
+div.row {
   justify-content: center;
 }
 </style>

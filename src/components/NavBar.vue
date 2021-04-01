@@ -12,7 +12,7 @@
       tag="div"
       v-if="!isAuthenticated"
       @click="onLoginClicked"
-      class="login"
+      class="login d-flex align-items-center"
     >
       <span>Log</span> <span>in</span>
     </router-link>
@@ -102,7 +102,7 @@ nav .login {
   border-radius: 30px;
   box-sizing: border-box;
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 0 20px;
 }
 nav .login > span:first-child {
   color: white;
