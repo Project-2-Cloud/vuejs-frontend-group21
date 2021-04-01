@@ -19,6 +19,7 @@ export default createStore({
     endpoints: {
       login: "http://authenticationservice-ucllteam21.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/login",
       products: url,
+      partnercheck: "http://subscriptionservice-ucllteam21.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/check",
     },
     products: [],
     inCart: []
@@ -63,7 +64,51 @@ export default createStore({
       const prods = await products.json()
       state.commit('setProducts', prods)
       console.log(prods)
-    }
+    },
+    async checkPartner({ state, commit }) {
+      let accessToken = state.user.accessToken;
+      console.log("checking partner access", state.endpoints.partnercheck);
+      const AuthStr = 'Bearer '.concat(accessToken);
+      const AuthHeader = { 'Authorization': AuthStr};
+      console.log("AuthToken=",AuthHeader);
+      let response = await fetch(state.endpoints.partnercheck, { 
+        method: 'GET',
+        headers: {
+          'Authorization': AuthStr }
+        });
+      console.log("partneraccess",response);
+      if (response.ok) {
+        commit('SET_PARTNER', true);
+        console.log("TRUE");
+      } else {
+        commit('SET_PARTNER', false);
+        console.log("FALSE");
+      }
+    },
+    registerProduct({ state }, obj) {
+      let productsurl = state.endpoints.products;
+      console.log(productsurl);
+      let accessToken = state.user.accessToken;
+      const AuthStr = 'Bearer '.concat(accessToken);
+      console.log(AuthStr);
+      console.log(obj);
+      axios(productsurl, { 
+          method: 'POST',
+          headers: {
+            'Accept': '*/*',
+            'Content-Type': 'application/json',
+            'Authorization': AuthStr
+          },
+          credentials: 'include',
+          data: obj
+      })
+      .then(response => {
+        console.log('Response:', response);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    },
   },
   modules: {
   }
