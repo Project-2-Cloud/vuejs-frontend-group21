@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="cart">
     <button
       class="btn btn-primary navbar-btn"
       data-toggle="modal"
@@ -89,3 +89,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+div.cart{
+  width: fit-content;
+}
+</style>
