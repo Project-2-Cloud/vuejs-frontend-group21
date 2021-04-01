@@ -28,6 +28,7 @@ export default {
   name: "Home",
   computed: {
     products() {
+      this.$store.dispatch("getProducts");
       return this.$store.state.products;
     }
   },
