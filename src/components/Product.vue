@@ -18,21 +18,6 @@
       </a>
     </div>
   </div>
-  <!-- <div class="product">
-    <div>
-      <h2>{{ title }}</h2>
-      <h3>{{ category }}</h3>
-    </div>
-    <div>
-      <img :src="thumbnail_url" :alt="thumbnail_url" :title="thumbnail_url">
-      <h3>€{{ price }}</h3>
-      <p>{{ description }}</p>
-      <button>
-
-      </button>
-
-    </div>
-  </div> -->
 </template>
 
 <script>
