@@ -47,7 +47,7 @@
         <div class="form-group">
           <label for="price">Price</label>
           <input
-            type="number"
+            type="float"
             min="0"
             class="form-control"
             v-model.number="price"
