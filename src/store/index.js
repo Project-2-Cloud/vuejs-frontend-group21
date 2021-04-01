@@ -36,7 +36,7 @@ export default createStore({
       state.user.idToken = "";
       state.user.accessToken = "";
       state.user.partner = "";
-      localStorage.user = state.user;
+      localStorage.removeItem('user');
     },
     login(state, payload) {
       state.user.isAuthenticated = true;
