@@ -7,15 +7,13 @@
     <span>How It Works</span>
     <router-link to="/Subscriptions">Our Subscriptions</router-link>
     <span>About Us</span>
-    <router-link
-      to="/"
-      tag="div"
+    <div
       v-if="!isAuthenticated"
       @click="onLoginClicked"
       class="login d-flex align-items-center"
     >
       <span>Log</span> <span>in</span>
-    </router-link>
+    </div>
     <div
       class="d-flex justify-content-between li-pointer nav-item"
       style="width: 220px"
@@ -33,7 +31,13 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">Account Settings</a>
-          <a v-if="isPartner" @click="onRegisterClicked" class="dropdown-item" href="#">Register Product</a>
+          <a
+            v-if="isPartner"
+            @click="onRegisterClicked"
+            class="dropdown-item"
+            href="#"
+            >Register Product</a
+          >
           <a @click="onLogoutClicked" class="dropdown-item"
             >Logout {{ userEmail }}</a
           >
@@ -58,7 +62,7 @@ export default {
     },
     isPartner() {
       return this.$store.state.user.partner;
-    },
+    }
   },
   methods: {
     onLoginClicked() {
@@ -71,9 +75,16 @@ export default {
       return this.$store.state.user.name;
     },
     onRegisterClicked() {
-      let obj = { 'description': 'description', 'id': parseInt("1"), 'price': parseInt("1000"), 'quantity': parseInt("10"), 'thumbnail_url': "thumbnail_url", 'title': "title" }
+      let obj = {
+        description: "description",
+        id: parseInt("1"),
+        price: parseInt("1000"),
+        quantity: parseInt("10"),
+        thumbnail_url: "thumbnail_url",
+        title: "title"
+      };
       this.$store.dispatch("registerProduct", obj);
-    },
+    }
   }
 };
 </script>
@@ -108,6 +119,7 @@ nav .hellohopper > span:last-child {
   color: #228c22;
 }
 nav .login {
+  cursor: pointer;
   background-color: #4f5458;
   border: 1px solid #707070;
   border-radius: 30px;
