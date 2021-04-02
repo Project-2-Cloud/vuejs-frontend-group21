@@ -28,9 +28,11 @@ export default {
   name: "Home",
   computed: {
     products() {
-      this.$store.dispatch("getProducts");
       return this.$store.state.products;
     }
+  },
+  mounted(){
+    this.$store.dispatch("getProducts");
   },
   components: {
     Product
